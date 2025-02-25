@@ -16,7 +16,7 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
         password: authModel.password,
       );
       return Right(auth);
-    } catch (e) {
+    } on FirebaseAuthException catch (e) {
       return Left("ERROR OCCURED ${e.toString()}");
     }
   }
@@ -29,7 +29,7 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
         password: authModel.password,
       );
       return Right(auth);
-    } catch (e) {
+    } on FirebaseAuthException catch (e) {
       return Left(e);
     }
   }

@@ -1,6 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:englifyar_teacher/core/themes/app_colors.dart';
 import 'package:englifyar_teacher/presentation/home/screens/home_screen.dart';
+import 'package:englifyar_teacher/presentation/mission/screens/mission_screen.dart';
 import 'package:flutter/material.dart';
 
 class Wrapper extends StatefulWidget {
@@ -20,7 +21,7 @@ class _WrapperState extends State<Wrapper> {
     super.initState();
     pages = [
       HomeScreen(),
-      Center(child: Icon(Icons.search, size: 100, color: Colors.green)),
+      MissionScreen(),
       Center(child: Icon(Icons.person, size: 100, color: Colors.red)),
     ];
   }
@@ -29,8 +30,7 @@ class _WrapperState extends State<Wrapper> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.primaryColor,
-      body: pages[
-          selectedIndex], // Tidak akan error karena `pages` sudah diinisialisasi
+      body: pages[selectedIndex],
       bottomNavigationBar: CurvedNavigationBar(
         color: AppColors.secondaryColor,
         backgroundColor: AppColors.primaryColor,
@@ -77,6 +77,6 @@ class _WrapperState extends State<Wrapper> {
         Icon(
           Icons.person,
           color: Colors.white,
-        ), // Menggunakan `Icons` yang sudah ada di Flutter SDK
+        ),
       ];
 }

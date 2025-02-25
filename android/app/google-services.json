@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "325918387048",
+    "project_id": "duo-app-590d0",
+    "storage_bucket": "duo-app-590d0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:325918387048:android:2b5cda302d3975605204dd",
+        "android_client_info": {
+          "package_name": "com.example.duo_clone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "325918387048-7k73t8u8lpu2hlomqu7pvsqg22stjk9t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqEjiAGHdLnUWe3QPs9CBnU0LRXAnlzkM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "325918387048-7k73t8u8lpu2hlomqu7pvsqg22stjk9t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:325918387048:android:ca13d7530a07d69c5204dd",
+        "android_client_info": {
+          "package_name": "com.example.englifyar_teacher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "325918387048-7k73t8u8lpu2hlomqu7pvsqg22stjk9t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqEjiAGHdLnUWe3QPs9CBnU0LRXAnlzkM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "325918387048-7k73t8u8lpu2hlomqu7pvsqg22stjk9t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

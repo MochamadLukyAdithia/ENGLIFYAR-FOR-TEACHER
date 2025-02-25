@@ -1,7 +1,6 @@
-import 'package:englifyar_teacher/presentation/auth/login_screen.dart';
+
 import 'package:englifyar_teacher/presentation/auth/register_screen.dart';
-import 'package:englifyar_teacher/presentation/home/wrapper.dart';
-import 'package:englifyar_teacher/presentation/splash/screens/excercise.dart';
+
 import 'package:englifyar_teacher/presentation/theme/theme_cubit.dart';
 import 'package:englifyar_teacher/service_locator.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -13,7 +12,7 @@ import 'package:path_provider/path_provider.dart';
 
 Future<void> main() async {
   await WidgetsFlutterBinding.ensureInitialized();
-
+  await Firebase.initializeApp();
   HydratedBloc.storage = await HydratedStorage.build(
       storageDirectory: kIsWeb
           ? HydratedStorageDirectory.web
@@ -36,7 +35,7 @@ class MyApp extends StatelessWidget {
       child: BlocBuilder<ThemeCubit, ThemeMode>(
         builder: (context, mode) => MaterialApp(
           theme: ThemeData(),
-          home: Wrapper(),
+          home: RegisterScreen(),
           debugShowCheckedModeBanner: false,
         ),
       ),
