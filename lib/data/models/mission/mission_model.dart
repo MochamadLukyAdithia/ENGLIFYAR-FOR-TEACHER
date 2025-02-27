@@ -5,24 +5,28 @@ import 'package:englifyar_teacher/domain/entities/mission/mission_entity.dart';
 class MissionModel {
   String? category;
   String? description;
-  double? duration;
+  String? question;
+  String? topic;
   MissionModel({
     required this.category,
     required this.description,
-    required this.duration,
+    required this.question,
+    required this.topic,
   });
-  MissionModel.fromJson(Map<String, dynamic> data){
+  MissionModel.fromJson(Map<String, dynamic> data) {
     category = data['category'] as String;
     description = data['description'] as String;
-    duration = data['duration'] as double;
+    question = data['question'] as String;
+    question = data['topic'] as String;
   }
 }
-extension MissionModelX on MissionModel{
-  MissionEntity toJson(){
+
+extension MissionModelX on MissionModel {
+  MissionEntity toJson() {
     return MissionEntity(
-      category: category,
-      description: description,
-      duration: duration,
+      category: description,
+      description: category,
+      question: question!,
     );
   }
 }

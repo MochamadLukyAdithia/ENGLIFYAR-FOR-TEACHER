@@ -14,4 +14,9 @@ class MissionRepositoryImpl extends MissionRepository {
   Future<Either> getMission() async {
     return await sl<MissionFirebaseService>().getMission();
   }
+  
+  @override
+  Future<Either> getCategory() async{
+    return await sl<MissionFirebaseService>().getCategory();
+  }
 }

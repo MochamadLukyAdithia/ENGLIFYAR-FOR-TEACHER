@@ -6,6 +6,7 @@ import 'package:englifyar_teacher/domain/entities/mission/mission_entity.dart';
 abstract class MissionFirebaseService {
   Future<Either> addOrRemoveMission(MissionModel misi);
   Future<Either> getMission();
+  Future<Either> getCategory();
 }
 
 class MissionFirebaseServiceImpl extends MissionFirebaseService {
@@ -15,7 +16,8 @@ class MissionFirebaseServiceImpl extends MissionFirebaseService {
       var add = await FirebaseFirestore.instance.collection("Mission").add({
         'category': misi.category,
         'description': misi.description,
-        'duration': misi.duration,
+        'topic': misi.topic,
+        'question': misi.question
       });
       return Right(add);
     } catch (e) {
@@ -33,6 +35,23 @@ class MissionFirebaseServiceImpl extends MissionFirebaseService {
         misi.add(missionModel.toJson());
       }
       return Right(misi);
+    } catch (e) {
+      return Left("ERROR OCCURED ${e.toString()}");
+    }
+  }
+
+  @override
+  Future<Either> getCategory() async {
+    try {
+      List<MissionEntity> misi = [];
+      final data = await FirebaseFirestore.instance
+          .collection("App-Mission-Category")
+          .get();
+      for (var i in data.docs) {
+        var missionModel = MissionModel.fromJson(i.data());
+        misi.add(missionModel.toJson());
+      }
+      return Right(data);
     } catch (e) {
       return Left("ERROR OCCURED ${e.toString()}");
     }

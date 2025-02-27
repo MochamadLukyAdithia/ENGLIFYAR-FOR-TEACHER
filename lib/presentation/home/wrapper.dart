@@ -2,6 +2,8 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:englifyar_teacher/core/themes/app_colors.dart';
 import 'package:englifyar_teacher/presentation/home/screens/home_screen.dart';
 import 'package:englifyar_teacher/presentation/mission/screens/mission_screen.dart';
+import 'package:englifyar_teacher/presentation/profile/screens/profile_screen.dart';
+
 import 'package:flutter/material.dart';
 
 class Wrapper extends StatefulWidget {
@@ -22,18 +24,18 @@ class _WrapperState extends State<Wrapper> {
     pages = [
       HomeScreen(),
       MissionScreen(),
-      Center(child: Icon(Icons.person, size: 100, color: Colors.red)),
+      ProfileScreen(),
     ];
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.primaryColor,
+      backgroundColor: const Color.fromARGB(255, 244, 244, 254),
       body: pages[selectedIndex],
       bottomNavigationBar: CurvedNavigationBar(
-        color: AppColors.secondaryColor,
-        backgroundColor: AppColors.primaryColor,
+        color: AppColors.primaryColor,
+        backgroundColor: AppColors.secondaryColor,
         animationCurve: Curves.easeInToLinear,
         index: selectedIndex,
         animationDuration: Duration(
@@ -70,13 +72,45 @@ class _WrapperState extends State<Wrapper> {
             ],
           ),
         ),
-        Icon(
-          Icons.quiz,
-          color: Colors.white,
+        Padding(
+          padding: EdgeInsets.only(
+            top: selectedIndex == 1 ? 0 : 20,
+          ),
+          child: Column(
+            children: [
+              Icon(
+                Icons.quiz,
+                color: Colors.white,
+              ),
+              Text(
+                "Mission",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: selectedIndex == 1 ? 0 : 16,
+                ),
+              )
+            ],
+          ),
         ),
-        Icon(
-          Icons.person,
-          color: Colors.white,
+        Padding(
+          padding: EdgeInsets.only(
+            top: selectedIndex == 2 ? 0 : 20,
+          ),
+          child: Column(
+            children: [
+              Icon(
+                Icons.person,
+                color: Colors.white,
+              ),
+              Text(
+                "Profile",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: selectedIndex == 2 ? 0 : 16,
+                ),
+              )
+            ],
+          ),
         ),
       ];
 }

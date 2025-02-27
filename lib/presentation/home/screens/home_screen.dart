@@ -1,3 +1,4 @@
+import 'package:englifyar_teacher/core/assets/images/app_image_network.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -15,13 +16,15 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 20,
-            ),
-            child: SearchBar(
-              controller: _searchController,
-              hintText: "Search",
+          Container(
+            height: 100,
+            width: 100,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage(
+                  AppImagesNetwork.individual,
+                ),
+              ),
             ),
           )
         ],

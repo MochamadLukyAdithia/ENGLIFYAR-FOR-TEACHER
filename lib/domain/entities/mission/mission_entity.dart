@@ -1,10 +1,11 @@
 class MissionEntity {
+  String? topic;
   String? category;
   String? description;
-  double? duration;
+  String? question;
   MissionEntity({
     required this.category,
     required this.description,
-    required this.duration,
+    required this.question,
   });
 }
